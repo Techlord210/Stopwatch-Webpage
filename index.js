@@ -35,12 +35,19 @@ startButton.onclick = function ()
 
     running = true
     timer()
+
+    resetButton.disabled = false;
+    stopButton.disabled = false;
+    startButton.disabled = true;
 }
 
 stopButton.onclick = function ()
 {
     running = false
     stopped = true
+
+    stopButton.disabled = true;
+    startButton.disabled = false;
 }
 
 resetButton.onclick = function ()
@@ -53,6 +60,9 @@ resetButton.onclick = function ()
     minutesSpan.textContent = "00"
     secondsSpan.textContent = "00"
     millisecondsSpawn.textContent = "000"
+
+    resetButton.disabled = true;
+    stopButton.disabled = true;
 }
 
 setInterval(timer, 1)
