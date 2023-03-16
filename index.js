@@ -2,8 +2,7 @@ let hoursSpan = document.getElementById("hours")
 let minutesSpan = document.getElementById("minutes")
 let secondsSpan = document.getElementById("seconds")
 let millisecondsSpawn = document.getElementById("milliseconds")
-let startButton = document.getElementById("start")
-let stopButton = document.getElementById("stop")
+let StartStopButton = document.getElementById("start")
 let resetButton = document.getElementById("reset")
 
 let running = false
@@ -25,32 +24,30 @@ function timer()
     }
 }
 
-startButton.onclick = function ()
-{   
-    if (running){return}
-    
+StartStopButton.onclick = function()
+{
+    if (running) {
+        StartStopButton.textContent = 'Start'
+        running = false
+        stopped = true
+        return
+    }
+    else {
+        StartStopButton.textContent = 'Stop'
+        running = true
+        resetButton.disabled = false
+    }
+    running = true
     // Checks whether watch has been stopped or reseted
     let date = new Date()
-    if (!stopped){startTime=date.getTime()}
+    if (!stopped) {
+        startTime=date.getTime()
+    }
 
-    running = true
     timer()
-
-    resetButton.disabled = false;
-    stopButton.disabled = false;
-    startButton.disabled = true;
 }
 
-stopButton.onclick = function ()
-{
-    running = false
-    stopped = true
-
-    stopButton.disabled = true;
-    startButton.disabled = false;
-}
-
-resetButton.onclick = function ()
+resetButton.onclick = function()
 {
     running = false
     stopped = false
@@ -61,8 +58,8 @@ resetButton.onclick = function ()
     secondsSpan.textContent = "00"
     millisecondsSpawn.textContent = "000"
 
-    resetButton.disabled = true;
-    stopButton.disabled = true;
+    resetButton.disabled = true
+    StartStopButton.textContent = 'Start'
 }
 
 setInterval(timer, 1)
