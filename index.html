@@ -1,36 +1,25 @@
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Stopwatch</title>
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css"/>
     </head>
     <body>
         <div class="heading">
             <h1>Stopwatch</h1>
         </div>
         <main>
-            <div class="block timetext">
-                <span id="hours" class="time">00</span>
-                <span class="label">:</span>
-            </div>
-            <div class="block timetext">
-                <span id="minutes" class="time">00</span>
-                <span class="label">:</span>
-            </div>
-            <div class="block timetext">
-                <span id="seconds" class="time">00</span>
-                <span class="label">.</span>
-            </div>
-            <div class="block timetext">
-                <span id="milliseconds" class="time">000</span>
+            <div class="timetext">
+                <span id="time">00:00:00.<span id="milliseconds">000</span></span>
             </div>
             <div class="buttons">
                 <button id="start">Start</button>
-                <!-- <button id="stop" disabled="disabled">Stop</button> -->
                 <button id="reset" disabled="disabled">Reset</button>
+                <button id="lap" disabled="disab">Lap</button>
             </div>
+            <table id="table"></table>
         </main>
         <script src="index.js"></script>
     </body>
